@@ -14,7 +14,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                     <li>Number of Moons: ${moons} </li>
                 </ol>
                 <img src="${imageUrl}">
-   `
+                `
 }
 
 function validateInput(testInput) {
@@ -34,7 +34,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         let fuelStatus = document.getElementbyID("fuelAmount");
         let cargoStatus = document.getElementbyID("cargoMass");
         let launchStatus = document.getElementbyID("launchStatus");
-        if (pilotStatus.value === "" || copilotStatus.value === "" || fuelStatus.value === "" || cargoStatus.value === "") {
+        if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
             alert("All fields are required!");
         }
 
