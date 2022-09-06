@@ -1,6 +1,6 @@
 // Write your JavaScript code here!
 
-//const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
+const { pickPlanet, addDestinationInfo } = require("./scriptHelper");
 
 window.addEventListener("load", function() {
     
