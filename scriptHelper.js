@@ -18,7 +18,7 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-   if (testInput === Number) {
+   if (isNan(testInput) === Number) {
         return "Is a Number";
    } else if (isNaN(testInput) === true) {
         return "Not a Number";
@@ -29,10 +29,10 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
-        let pilotStatus = document.getElementbyID("pilotName");
-        let copilotStatus = document.getElementbyID("copilotName");
-        let fuelStatus = document.getElementbyID("fuelAmount");
-        let cargoStatus = document.getElementbyID("cargoMass");
+        let pilotStatus = document.getElementbyID("pilotStatus");
+        let copilotStatus = document.getElementbyID("copilotStatus");
+        let fuelStatus = document.getElementbyID("fuelStatus");
+        let cargoStatus = document.getElementbyID("cargoStatus");
         let launchStatus = document.getElementbyID("launchStatus");
         if (validateInput(pilot) === "Empty" || validateInput(copilot) === "Empty" || validateInput(fuelLevel) === "Empty" || validateInput(cargoLevel) === "Empty") {
             alert("All fields are required!");
@@ -40,12 +40,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
         else if (validateInput(fuelLevel) === "Not a Number" || validateInput(cargoLevel) === "Not a Number") {
             alert("Please enter numerical values");
-        } else if (validateInput(pilot) === "Is a Number" || validateInput(copliot)=== "Is a Number") {
+        } else if (validateInput(pilot) === "Is a Number" || validateInput(copilot)=== "Is a Number") {
             alert("Please do not enter numbers for names")
         }
         else {
-            pilotStatus.innerHTML = "Pilot ${pilot} is ready";
-            copilotStatus.innerHTML = "Co-pilot ${copilot} is ready";
+            pilotStatus.innerHTML = `Pilot ${pilot} is ready`;
+            copilotStatus.innerHTML = `Co-pilot ${copilot} is ready`;
             list.style.visibility = 'hidden';
         }
 
